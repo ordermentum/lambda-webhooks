@@ -1,0 +1,26 @@
+service: lambda-webhooks
+
+provider:
+  name: aws
+  runtime: nodejs10.x
+  stage: testing
+  timeout: 180
+  jwtSecret: testsecret
+  maxContentLength: 52428890
+  region: ap-southeast-2
+
+functions:
+  webhooks:
+    handler: build/webhooks
+    memorySize: 3008
+    reservedConcurrency: 100
+    environment:
+      JWT_SECRET: ${self:provider.jwtSecret}
+      MAX_CONTENT_LENGTH: ${self:provider.maxContentLength}
+    events:
+      - http:
+          path: /
+          method: post
+          cors: true
+          integration: lambda-proxy
+          onError: arn:aws:sns:ap-southeast-2:123564074355:Ordermentum_Infrastructure_Alerts

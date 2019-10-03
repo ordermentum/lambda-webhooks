@@ -1,0 +1,15 @@
+# package directories
+node_modules
+jspm_packages
+node_modules
+npm-debug*
+.env
+test/config/privatekey.pem
+.nyc_output
+coverage/
+.vscode
+yarn-error*
+
+# Serverless directories
+build
+.serverless
