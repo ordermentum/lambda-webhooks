@@ -2,7 +2,7 @@
 
 This is the mothership repo for all jvm packages in OM.
 
-To publish a packages:
+To publish a package:
 https://help.github.com/en/packages/using-github-packages-with-your-projects-ecosystem/configuring-gradle-for-use-with-github-packages
 
 sample publisher:
