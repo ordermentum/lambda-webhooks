@@ -31,23 +31,25 @@ publishing {
 
 
 To use a package:
-Add
-```
-maven {
-            name = "JvmPackages"
-            url = uri("https://maven.pkg.github.com/ordermentum/jvm-packages")
-            credentials {
-                username = "arshu16"
-                password = "bec2628b7c1dd0c13c68c9573cc2b5aeaab14abb"
-            }
-        }
-```
-to your repositories list and add package like
-```
-implementation("$groupId:$artifactId:$version")
-```
-For eg.
-```
-implementation("io.ordermentum:logging:${ordermentumLogger}")
-```
+- Generate a github token that can download packages
+- Add to your repositories list and add package
+  
+  ```
+        maven {
+                    name = "JvmPackages"
+                    url = uri("https://maven.pkg.github.com/ordermentum/jvm-packages")
+                    credentials {
+                        username = "{GITHUB_USER}"
+                        password = "{GITHUB_TOKEN"
+                    }
+                }
+  ```
+        
+   ```
+        implementation("$groupId:$artifactId:$version")
+   ```
+        For eg.
+  ```
+        implementation("io.ordermentum:logging:${ordermentumLogger}")
+  ```
 
