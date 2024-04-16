@@ -13,8 +13,8 @@ publishing {
                 name = "JvmPackages"
                 url = uri("https://maven.pkg.github.com/ordermentum/jvm-packages")
                 credentials {
-                    username = "arshu16"
-                    password = "bec2628b7c1dd0c13c68c9573cc2b5aeaab14abb"
+                      username = "{GITHUB_USER}"
+                      password = "{GITHUB_TOKEN"
                 }
             }
         }
